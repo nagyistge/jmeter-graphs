@@ -1,7 +1,7 @@
 (defproject jmeter-graphs "0.1.0-SNAPSHOT"
   :description "FIXME: write description"
   :url "http://example.com/FIXME"
-  :license {:name "GNU General Public License v3"
-            :url "http://www.gnu.org/licenses/gpl.html"}
+  :license {:name "Eclipse Public License"
+            :url "http://www.eclipse.org/legal/epl-v10.html"}
   :dependencies [[org.clojure/clojure "1.5.1"]
                   [incanter "1.5.5"]])

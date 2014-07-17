@@ -6,7 +6,7 @@
 (defn read-csv [filepath]
   (io/read-dataset filepath))
 
-(defn graph [dataset title]
+(defn graph-response [dataset title]
   (incanter/view (charts/time-series-plot
                   (incanter/sel dataset :cols 0)
                   (incanter/sel dataset :cols 1)
@@ -14,9 +14,10 @@
                   :y-label "response time (ms)"
                   :title title)))
 
-(defn graph-report [filepath title]
+(defn graph-response-report [filepath title]
   (let [dataset (read-csv filepath)]
     (graph dataset title)))
+
 
 
 

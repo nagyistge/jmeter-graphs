@@ -19,13 +19,16 @@
   (let [dataset (read-csv filepath)]
     (graph-response dataset title)))
 
+(defn number-of-requests-per-second [filepath]
+  (let [dataset (read-csv filepath)
+        epochs (incanter/sel dataset :cols 0)
+        epoch-map (reduce-kv (fn [c k v] (assoc c k (count v))) {} (group-by #(quot % 1000) epochs))] epoch-map))
+
+(defn graph-requests-per-second [filepath title])
+
+;;; Examples
+;;; (-main :graph "response" :filepath "test/jmeter_graphs/aggregate-report.csv" :title "20rps")
 (defn -main [& args]
-  (when (= (first args) "response") 
-    (graph-response-report (second args) (nth args 2))))
-
-
-;;;
-(def epochs '(1405060620301 1405060625735 1405060626141
-                                 1405060625559 1405060627285 1405060626927 1405060625174 1405060626962 140506062616))
-
-
+  (let [{:keys [graph filepath title]} args]
+    (when (= graph "response")
+      (graph-response-report filepath title))))

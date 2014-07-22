@@ -22,7 +22,9 @@
 (defn number-of-requests-per-second [filepath]
   (let [dataset (read-csv filepath)
         epochs (incanter/sel dataset :cols 0)
-        epoch-map (reduce-kv (fn [c k v] (assoc c k (count v))) {} (group-by #(quot % 1000) epochs))] epoch-map))
+        epoch-map (reduce-kv (fn [c k v] (assoc c k (count v))) {} (group-by #(quot % 1000) epochs))
+        first-epoch (incanter/sel dataset :rows 0 :cols 0)
+        last-epoch (incanter/sel dataset :rows (- (incanter/nrow dataset) 1) :cols 0)]))
 
 (defn graph-requests-per-second [filepath title])
 

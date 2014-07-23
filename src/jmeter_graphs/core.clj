@@ -8,17 +8,17 @@
 (defn read-csv [filepath]
   (io/read-dataset filepath))
 
-(defn graph-response-dataset [dataset title]
+(defn graph-dataset [dataset title y-label]
   (incanter/view (charts/time-series-plot
                   (incanter/sel dataset :cols 0)
                   (incanter/sel dataset :cols 1)
                   :x-label "minutes"
-                  :y-label "response time (ms)"
+                  :y-label y-label
                   :title title)))
 
-(defn graph-response-report [filepath title]
+(defn graph-response [filepath title]
   (let [dataset (read-csv filepath)]
-    (graph-response-dataset dataset title)))
+    (graph-dataset dataset title "response time (ms)")))
 
 
 ;;; request graph
@@ -38,14 +38,9 @@
     (incanter/dataset ["time" "requests"] 
                       sorted-dataset)))
 
-(defn graph-request-report [filepath]
+(defn graph-request [filepath]
   (let [dataset (request-dataset filepath)]
-      (incanter/view (charts/time-series-plot
-                  (incanter/sel dataset :cols 0)
-                  (incanter/sel dataset :cols 1)
-                  :x-label "minutes"
-                  :y-label "requests per second"
-                  :title "requests"))))
+    (graph-dataset dataset "requests" "requests per second")))
 
 ;;; Examples
 ;;; (-main :graph "response" :filepath "test/jmeter_graphs/aggregate-report.csv" :title "20rps")
@@ -53,6 +48,6 @@
 (defn -main [& args]
   (let [{:keys [graph filepath title]} args]
     (cond 
-     (= graph "response") (graph-response-report filepath title)
-     (= graph "requests") (graph-request-report filepath))))
+     (= graph "response") (graph-response filepath title)
+     (= graph "requests") (graph-request filepath))))
 

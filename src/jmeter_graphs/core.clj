@@ -4,7 +4,7 @@
           [incanter.charts :as charts])
 (:gen-class))
 
-;;; response graph
+;;; response
 (defn read-csv [filepath]
   (io/read-dataset filepath))
 
@@ -41,6 +41,13 @@
 (defn graph-request [filepath]
   (let [dataset (request-dataset filepath)]
     (graph-dataset dataset "Requests" "Requests Per Second" )))
+
+;;; throughput
+(defn sum-epoch-and-elapsed-times [filepath]
+  (let [dataset (read-csv filepath)
+        col0 (incanter/sel dataset :cols 0)
+        col1 (incanter/sel dataset :cols 1)]
+    (map + col0 col1)))
 
 ;;; Examples
 ;;; (-main :graph "response" :filepath "test/jmeter_graphs/fixtures/aggregate-report.csv" :title "20rps")

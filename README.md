@@ -20,9 +20,9 @@ You can use the default log configuration, but the prerequisites are that the ep
 
 ### Calculations
 
-* Response Times => Direct reading of epoch and elapsed times
-* Requests per second => Grouped and counted the number of samples per second 
-* Throughput per second => Similar method to requests per second, but added epoch times to the elapsed time
+* **Response Times** => Direct reading of epoch and elapsed times
+* **Requests per second** => Grouped and counted the number of samples per second 
+* **Throughput per second** => Similar method to requests per second, but added epoch times to the elapsed time
 
 ### Graphing Library
 I have used Clojure's [Incanter](https://github.com/incanter/incanter) as a graphing library.

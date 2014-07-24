@@ -1,9 +1,11 @@
 # jmeter-graphs
 
-A utility to graph from JMeter CSV logs.
+## Description
+A utility to graph from JMeter CSV logs. The currently supported graphs are response times, requests per second and throughput per second.
 
-## Usage
+### Calculations
 
+## JMeter Set-up
 Create a JMeter listener and enter a filepath in the edit box labelled, "Write results to file". I use the Aggegrate Report listener and input './aggregate-report.csv'.
 
 You can use the default log configuration, but the prerequisites are that the epoch time and elapsed time are in the first and second columns respectively, there is no header used and the logs are in CSV format. 
@@ -12,11 +14,12 @@ You can use the default log configuration, but the prerequisites are that the ep
 1406193755956,202, ...
 ```
 
+## Installation
+
 ## Implementation 
 
-I have used 
-
-
+### Graphing Library
+I have used Clojure's [Incanter](https://github.com/incanter/incanter) as graphing library.
 
 ## License
 

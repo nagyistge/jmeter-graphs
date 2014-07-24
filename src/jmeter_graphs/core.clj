@@ -12,13 +12,13 @@
   (incanter/view (charts/time-series-plot
                   (incanter/sel dataset :cols 0)
                   (incanter/sel dataset :cols 1)
-                  :x-label "minutes"
+                  :x-label "Test Duration (mins)"
                   :y-label y-label
                   :title title)))
 
 (defn graph-response [filepath title]
   (let [dataset (read-csv filepath)]
-    (graph-dataset dataset title "response time (ms)")))
+    (graph-dataset dataset title "Response Times (ms)")))
 
 
 ;;; request graph
@@ -40,11 +40,11 @@
 
 (defn graph-request [filepath]
   (let [dataset (request-dataset filepath)]
-    (graph-dataset dataset "requests" "requests per second")))
+    (graph-dataset dataset "Requests" "Requests Per Second" )))
 
 ;;; Examples
-;;; (-main :graph "response" :filepath "test/jmeter_graphs/aggregate-report.csv" :title "20rps")
-;;; (-main :graph "requests" :filepath "test/jmeter_graphs/aggregate-report.csv")
+;;; (-main :graph "response" :filepath "test/jmeter_graphs/fixtures/aggregate-report.csv" :title "20rps")
+;;; (-main :graph "requests" :filepath "test/jmeter_graphs/fixtures/aggregate-report.csv")
 (defn -main [& args]
   (let [{:keys [graph filepath title]} args]
     (cond 

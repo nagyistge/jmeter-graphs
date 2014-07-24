@@ -5,6 +5,10 @@ A utility to graph from JMeter CSV logs. The currently supported graphs are resp
 
 ### Calculations
 
+* Response Times => Direct reading of epoch and elapsed times
+* Requests per second => Grouped and counted the number of samples per second 
+* Throughput per second => Similar method to requests per second, but added epoch times to the elapsed time
+
 ## JMeter Set-up
 Create a JMeter listener and enter a filepath in the edit box labelled, "Write results to file". I use the Aggegrate Report listener and input './aggregate-report.csv'.
 
@@ -19,7 +23,7 @@ You can use the default log configuration, but the prerequisites are that the ep
 ## Implementation 
 
 ### Graphing Library
-I have used Clojure's [Incanter](https://github.com/incanter/incanter) as graphing library.
+I have used Clojure's [Incanter](https://github.com/incanter/incanter) as a graphing library.
 
 ## License
 

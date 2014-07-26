@@ -6,6 +6,7 @@ A utility to graph from JMeter CSV logs. The currently supported graphs are resp
 ### Example Graphs
 * [Response times](./examples/sample-response-times.png)
 * [Requests per second]( ./examples/sample-requests.png)
+* [Throughput per second]( ./examples/sample-throughput.png)
 
 ## JMeter Set-up
 Create a JMeter listener and enter a filepath in the edit box labelled, "Write results to file". I use the Aggegrate Report listener and input './aggregate-report.csv'.

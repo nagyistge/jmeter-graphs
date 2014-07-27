@@ -17,7 +17,16 @@ You can use the default log configuration, but the prerequisites are that the ep
 1406193755956,202, ...
 ```
 
-## Installation
+## Installation and Example Run
+```bash 
+$ git clone git@github.com:AidyLewis/jmeter-graphs.git
+$ cd bin
+$ java -jar jmeter-graphs-0.1.0.jar "response" "../test/jmeter_graphs/fixtures/aggregate-report.csv" "20rps"
+$ java -jar jmeter-graphs-0.1.0.jar "requests" "../test/jmeter_graphs/fixtures/aggregate-report.csv"
+$ java -jar jmeter-graphs-0.1.0.jar "throughput" "../test/jmeter_graphs/fixtures/aggregate-report.csv"
+```
+
+The standalone or uberjar can be placed anywhere on your Java classpath. 
 
 ## Implementation 
 

@@ -4,7 +4,6 @@
           [incanter.charts :as charts])
 (:gen-class))
 
-;;; response
 (defn read-csv [filepath]
   (io/read-dataset filepath))
 
@@ -20,11 +19,13 @@
   (let [dataset (read-csv filepath)]
     (graph-dataset dataset title "Response Times (ms)")))
 
-;;; request graph
+(defn count-samples-by-second [samples]
+  (reduce-kv (fn [c k v] (assoc c k (count v))) {} (group-by #(quot % 1000) samples)))
+
 (defn number-of-requests-in-a-second [filepath]
   (let [dataset (read-csv filepath)
         epochs (incanter/sel dataset :cols 0)
-        seconds-map (reduce-kv (fn [c k v] (assoc c k (count v))) {} (group-by #(quot % 1000) epochs))] 
+        seconds-map (count-samples-by-second epochs)] 
     seconds-map))
 
 (defn convert-seconds-to-milliseconds [seconds]
@@ -41,7 +42,6 @@
   (let [dataset (request-dataset filepath)]
     (graph-dataset dataset "Requests" "Requests Per Second" )))
 
-;;; throughput
 (defn sum-epoch-and-elapsed-times [filepath]
   (let [dataset (read-csv filepath)
         col0 (incanter/sel dataset :cols 0)
@@ -50,7 +50,7 @@
 
 (defn throughput-by-second [filepath]
   (let [throughput (sum-epoch-and-elapsed-times filepath)
-     seconds-map (reduce-kv (fn [c k v] (assoc c k (count v))) {} (group-by #(quot % 1000) throughput))]
+     seconds-map (count-samples-by-second throughput)]
     seconds-map))
 
 (defn throughput-dataset [filepath] 

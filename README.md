@@ -25,8 +25,7 @@ $ java -jar jmeter-graphs-0.1.0.jar "response" "../test/jmeter_graphs/fixtures/a
 $ java -jar jmeter-graphs-0.1.0.jar "requests" "../test/jmeter_graphs/fixtures/aggregate-report.csv"
 $ java -jar jmeter-graphs-0.1.0.jar "throughput" "../test/jmeter_graphs/fixtures/aggregate-report.csv"
 ```
-
-The standalone or uberjar can be placed anywhere on your Java classpath. 
+This is a standalone executable jar and can be placed anywhere on your filesystem.
 
 ## Implementation 
 

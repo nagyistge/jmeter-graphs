@@ -38,6 +38,10 @@ This is a standalone executable jar and can be placed anywhere on your filesyste
 ### Graphing Library
 I have used Clojure's [Incanter](https://github.com/incanter/incanter) as a graphing library.
 
+##TODO
+
+- [x] Automatically add date to graphs 
+
 ## License
 
 Copyright © 2014 Adrian Lewis. Distributed under the Eclipse Public License.

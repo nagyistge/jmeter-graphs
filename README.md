@@ -39,9 +39,8 @@ This is a standalone executable jar and can be placed anywhere on your filesyste
 I have used Clojure's [Incanter](https://github.com/incanter/incanter) as a graphing library.
 
 ##TODO
-
 - [ ] Automatically add date to graphs 
-
+- [ ] Update implementation details and explain throughput with dataset example (throughput-dataset)
 ## License
 
 Copyright © 2014 Adrian Lewis. Distributed under the Eclipse Public License.

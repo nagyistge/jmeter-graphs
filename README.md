@@ -40,7 +40,7 @@ I have used Clojure's [Incanter](https://github.com/incanter/incanter) as a grap
 
 ##TODO
 
-- [x] Automatically add date to graphs 
+- [] Automatically add date to graphs 
 
 ## License
 

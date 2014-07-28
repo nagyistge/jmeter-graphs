@@ -41,6 +41,7 @@ I have used Clojure's [Incanter](https://github.com/incanter/incanter) as a grap
 ##TODO
 - [ ] Automatically add date to graphs 
 - [ ] Update implementation details and explain throughput with dataset example (throughput-dataset)
-## License
 
+
+## License
 Copyright © 2014 Adrian Lewis. Distributed under the Eclipse Public License.

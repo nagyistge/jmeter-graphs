@@ -20,7 +20,7 @@
     (graph-dataset dataset title "Response Times (ms)")))
 
 (defn count-samples-by-second [samples]
-  (reduce-kv (fn [c k v] (assoc c k (count v))) {} (group-by #(quot % 1000) samples)))
+  (frequencies (map #(quot % 1000) samples)))
 
 (defn number-of-requests-in-a-second [filepath]
   (let [dataset (read-csv filepath)
@@ -54,8 +54,8 @@
     seconds-map))
 
 (defn throughput-dataset [filepath] 
-  (let [requests-per-second (throughput-by-second filepath)
-        sorted-dataset (sort (convert-seconds-to-milliseconds requests-per-second))]
+  (let [throughput-per-second (throughput-by-second filepath)
+        sorted-dataset (sort (convert-seconds-to-milliseconds throughput-per-second))]
     (incanter/dataset ["time" "throughput"] 
                       sorted-dataset)))
 

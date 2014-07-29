@@ -44,7 +44,7 @@ I have used Clojure's [Incanter](https://github.com/incanter/incanter) as a grap
 JMeter has a constant throughput timer that fixes requests per minute. We can assure 20 requests per second(rps) with
 (* 60 20) => 1200. 
 
-We cannot assure a fixed throughput (+ epoch elapsed) as elapsed time is variable. At 20rps we may have a throughput of 15 for one second and 25 the subsequent second. 
+We cannot assure a fixed throughput (+ epoch-times elapsed-times) as elapsed time is variable. At 20rps we may have a throughput of 15 for one second and 25 the subsequent second. 
 
 Running the below function through a Clojure REPL:
 ```clojure

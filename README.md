@@ -38,9 +38,32 @@ This is a standalone executable jar and can be placed anywhere on your filesyste
 ### Graphing Library
 I have used Clojure's [Incanter](https://github.com/incanter/incanter) as a graphing library.
 
+## Questions
+* Why is my throughput per second sometimes greater than my requests per second?
+
+JMeter has a constant throughput timer that fixes requests per minute. We can assure 20 requests per second (rps) with
+(* 60 20) => 1200. 
+
+We cannot assure a fixed throughput (+ epoch elapsed) as elapsed time is variable. At 20rps we may have a throughput of 15 for one second and 25 the subsequent second. 
+
+Running the below function through a Clojure REPL:
+```clojure
+(throughput-dataset "test/jmeter_graphs/fixtures/aggregate-report.csv")
+````
+
+Will give us an Incanter dataset:
+```log
+| 1406194240000 |         20 |
+| 1406194241000 |         20 |
+| 1406194242000 |         15 |
+| 1406194243000 |         25 |
+| 1406194244000 |         20 |
+```
+
+Which show us the time period the throughput per second occurred. In one second we have 15, whilst the nest second returns 25. 
+
 ##TODO
-- [ ] Automatically add date to graphs 
-- [ ] Update implementation details and explain throughput with dataset example (throughput-dataset)
+- [ ] Automatically add date to graphs
 
 
 ## License

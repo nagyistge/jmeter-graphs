@@ -63,7 +63,10 @@ Will give us an Incanter dataset:
 Which show us the time period the throughput per second occurred. In one second we have 15, whilst the next second returns 25. 
 
 ##TODO
-- [ ] Automatically add date to graphs
+* Change 'test duration' to 'time'
+* Add help command
+* Remove strings parameters 
+
 
 
 ## License

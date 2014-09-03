@@ -67,8 +67,6 @@ Which show us the time period the throughput per second occurred. In one second 
 * hard-code response header
 * pluralise 'response'
 * Remove string from graph name in command line parameters 
-* average times every x period to get rid of spikes.
-* filter non-http response codes from throughput and responses
 * graph response codes
 * throughput axis is has the word "throughout"
 

@@ -66,7 +66,7 @@ Which show us the time period the throughput per second occurred. In one second 
 * Change 'test duration' to 'standard time'
 * hard-code response header
 * pluralise 'response'
-* Remove string parameters 
+* Remove string from graph name in command line parameters 
 * average times every x period to get rid of spikes.
 * filter non-http response codes from throughput and responses
 * Use path as first paramenter and graph as second

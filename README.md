@@ -69,6 +69,7 @@ Which show us the time period the throughput per second occurred. In one second 
 * Remove string parameters 
 * average times every x period to get rid of spikes.
 * filter non-http response codes from throughput and responses
+* Use path as first paramenter and graph as second
 
 
 

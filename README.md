@@ -18,14 +18,15 @@ You can use the default log configuration, but the prerequisites are that the ep
 ```
 
 ## Installation and Example Run
+There is a standalone uberjar placed in bin. This first parameter is the type of graph you require and the second argument is the filepath of the JMeter report.
+
 ```bash 
 $ git clone git@github.com:AidyLewis/jmeter-graphs.git
 $ cd bin
-$ java -jar jmeter-graphs-0.1.0.jar "response" "../test/jmeter_graphs/fixtures/aggregate-report.csv" "20rps"
-$ java -jar jmeter-graphs-0.1.0.jar "requests" "../test/jmeter_graphs/fixtures/aggregate-report.csv"
-$ java -jar jmeter-graphs-0.1.0.jar "throughput" "../test/jmeter_graphs/fixtures/aggregate-report.csv"
+$ java -jar jmeter-graphs-0.1.1.jar "responses" "../test/jmeter_graphs/fixtures/aggregate-report.csv"
+$ java -jar jmeter-graphs-0.1.1.jar "requests" "../test/jmeter_graphs/fixtures/aggregate-report.csv"
+$ java -jar jmeter-graphs-0.1.1.jar "throughput" "../test/jmeter_graphs/fixtures/aggregate-report.csv"
 ```
-This is a standalone executable jar and can be placed anywhere on your filesystem.
 
 ## Implementation 
 
@@ -33,7 +34,7 @@ This is a standalone executable jar and can be placed anywhere on your filesyste
 
 * **Response Times** => Direct reading of epoch and elapsed times
 * **Requests per second** => Grouped and counted the number of samples per second 
-* **Throughput per second** => Similar method to requests per second, but added epoch times to the elapsed time
+* **Throughput per second** => Similar method to requests per second, but added epoch time to the elapsed time
 
 ### Graphing Library
 I have used Clojure's [Incanter](https://github.com/incanter/incanter) as a graphing library.

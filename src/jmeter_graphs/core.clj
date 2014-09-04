@@ -11,13 +11,13 @@
   (incanter/view (charts/time-series-plot
                   (incanter/sel dataset :cols 0)
                   (incanter/sel dataset :cols 1)
-                  :x-label "Test Duration (mins)"
+                  :x-label "Actual Time"
                   :y-label y-label
                   :title title)))
 
-(defn graph-response [filepath title]
+(defn graph-responses [filepath]
   (let [dataset (read-csv filepath)]
-    (graph-dataset dataset title "Response Times (ms)")))
+    (graph-dataset dataset "Responses" "Response Times (ms)")))
 
 (defn count-samples-by-second [samples]
   (frequencies (map #(quot % 1000) samples)))
@@ -61,17 +61,17 @@
 
 (defn graph-throughput [filepath]
   (let [dataset (throughput-dataset filepath)]
-    (graph-dataset dataset "Throughput" "Throughout Per Second")))
+    (graph-dataset dataset "Throughput" "Throughput Per Second")))
 
 ;;; Examples
-;;; (-main "response" "test/jmeter_graphs/fixtures/aggregate-report.csv" "20rps")
-;;; (-main "requests" "test/jmeter_graphs/fixtures/aggregate-report.csv")
-;;; (-main "throughput" "test/jmeter_graphs/fixtures/aggregate-report.csv")
-(defn -main [& args]
+;;; (-main :response "test/jmeter_graphs/fixtures/aggregate-report.csv")
+;;; (-main :requests "test/jmeter_graphs/fixtures/aggregate-report.csv")
+;;; (-main :throughput "test/jmeter_graphs/fixtures/aggregate-report.csv")
+(defn -main [& args]  
   (cond
-   (= (first args) "response") (graph-response (second args) (nth args 2))
-   (= (first args) "requests") (graph-request (second args))
-   (= (first args) "throughput") (graph-throughput (second args))
+   (= (first args) :response) (graph-responses (second args))
+   (= (first args) :requests) (graph-request (second args))
+   (= (first args) :throughput) (graph-throughput (second args))
    :else (println "You did not pass a valid graph")))
 
 

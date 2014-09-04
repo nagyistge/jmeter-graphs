@@ -64,14 +64,14 @@
     (graph-dataset dataset "Throughput" "Throughput Per Second")))
 
 ;;; Examples
-;;; (-main :response "test/jmeter_graphs/fixtures/aggregate-report.csv")
-;;; (-main :requests "test/jmeter_graphs/fixtures/aggregate-report.csv")
-;;; (-main :throughput "test/jmeter_graphs/fixtures/aggregate-report.csv")
+;;; (-main "response" "test/jmeter_graphs/fixtures/aggregate-report.csv")
+;;; (-main "requests" "test/jmeter_graphs/fixtures/aggregate-report.csv")
+;;; (-main "throughput" "test/jmeter_graphs/fixtures/aggregate-report.csv")
 (defn -main [& args]  
   (cond
-   (= (first args) :response) (graph-responses (second args))
-   (= (first args) :requests) (graph-request (second args))
-   (= (first args) :throughput) (graph-throughput (second args))
+   (= (first args) "responses") (graph-responses (second args))
+   (= (first args) "requests") (graph-request (second args))
+   (= (first args) "throughput") (graph-throughput (second args))
    :else (println "You did not pass a valid graph")))
 
 

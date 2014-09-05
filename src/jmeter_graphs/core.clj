@@ -64,7 +64,7 @@
     (graph-dataset dataset "Throughput" "Throughput Per Second")))
 
 ;;; Examples
-;;; (-main "response" "test/jmeter_graphs/fixtures/aggregate-report.csv")
+;;; (-main "responses" "test/jmeter_graphs/fixtures/aggregate-report.csv")
 ;;; (-main "requests" "test/jmeter_graphs/fixtures/aggregate-report.csv")
 ;;; (-main "throughput" "test/jmeter_graphs/fixtures/aggregate-report.csv")
 (defn -main [& args]  

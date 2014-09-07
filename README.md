@@ -64,12 +64,7 @@ Will give us an Incanter dataset:
 Which show us the time period the throughput per second occurred. In one second we have 15, whilst the next second returns 25. 
 
 ##TODO
-* Change 'test duration' to 'standard time'
-* hard-code response header
-* pluralise 'response'
-* Remove string from graph name in command line parameters 
 * graph response codes
-* throughput axis is has the word "throughout"
 
 
 

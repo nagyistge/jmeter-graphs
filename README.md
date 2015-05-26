@@ -21,7 +21,7 @@ You can use the default log configuration, but the prerequisites are that the ep
 There is a standalone uberjar placed in bin. This first parameter is the type of graph you require and the second argument is the filepath of the JMeter report.
 
 ```bash 
-$ git clone git@github.com:AidyLewis/jmeter-graphs.git
+$ git clone git@github.com:aidylewis/jmeter-graphs.git
 $ cd bin
 $ java -jar jmeter-graphs-0.1.1.jar "responses" "../test/jmeter_graphs/fixtures/aggregate-report.csv"
 $ java -jar jmeter-graphs-0.1.1.jar "requests" "../test/jmeter_graphs/fixtures/aggregate-report.csv"

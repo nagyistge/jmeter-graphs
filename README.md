@@ -11,7 +11,7 @@ A utility to graph from JMeter CSV logs. The currently supported graphs are resp
 ## JMeter Set-up
 Create a JMeter listener and enter a filepath in the edit box labelled, "Write results to file". I use the Aggegrate Report listener and input './aggregate-report.csv'.
 
-You can use the default log configuration, but the prerequisites are that the epoch time and elapsed time are in the first and second columns respectively, a header is not used and the logs are in CSV format. 
+You can use the default log configuration, but the prerequisites are that the Unix time and elapsed time are in the first and second columns respectively, a header is not used and the logs are in CSV format. 
 
 ```log
 1406193755956,202, ...
@@ -61,12 +61,4 @@ Will give us an Incanter dataset:
 | 1406194244000 |         20 |
 ```
 
-Which show us the time period the throughput per second occurred. In one second we have 15, whilst the next second returns 25. 
-
-##TODO
-* graph response codes
-
-
-
-## License
-Copyright © 2014 Adrian Lewis. Distributed under the Eclipse Public License.
+Which show us the time period the throughput per second occurred. In one second we have 15, whilst the next second returns 25.
